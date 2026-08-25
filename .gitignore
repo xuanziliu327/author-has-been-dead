@@ -1,0 +1,12 @@
+node_modules/
+dist/
+public/runtime-assets/
+*.tsbuildinfo
+.DS_Store
+Thumbs.db
+
+# 幕后剧情资料仅保留在本地，不上传到公开仓库
+/第一章/第一章大纲和谜题设计.md
+/第一章/玩家游玩流程.md
+/牧芙蓉到底是怎么想的.md
+/最后最后的谜底，关于他者的魔法.md

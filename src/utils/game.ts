@@ -1,0 +1,9 @@
+export function stepDigit(value: number, direction: 1 | -1): number {
+  return (value + direction + 10) % 10
+}
+
+export function formatTime(seconds: number): string {
+  if (!Number.isFinite(seconds) || seconds < 0) return '0:00'
+  const minutes = Math.floor(seconds / 60)
+  return `${minutes}:${Math.floor(seconds % 60).toString().padStart(2, '0')}`
+}

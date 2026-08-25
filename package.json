@@ -1,0 +1,39 @@
+{
+  "name": "author-has-been-dead-chapter-one",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "predev": "node scripts/sync-runtime-assets.mjs",
+    "dev": "vite",
+    "prebuild": "node scripts/sync-runtime-assets.mjs",
+    "build": "tsc -b && vite build",
+    "postbuild": "node scripts/verify-build.mjs",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "hash": "node scripts/hash.mjs"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-markdown": "latest",
+    "react-router-dom": "latest",
+    "remark-gfm": "latest"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "latest",
+    "@testing-library/react": "latest",
+    "@testing-library/user-event": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "jsdom": "latest",
+    "typescript": "latest",
+    "vite": "latest",
+    "vitest": "latest"
+  }
+}
