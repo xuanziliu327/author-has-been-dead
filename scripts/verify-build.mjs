@@ -44,7 +44,13 @@ for (const fileName of forbiddenFileNames) {
 }
 
 for (const backstageFile of backstageFiles) {
-  const source = compact(await readFile(backstageFile, 'utf8'))
+  let source
+  try {
+    source = compact(await readFile(backstageFile, 'utf8'))
+  } catch (error) {
+    if (error?.code === 'ENOENT') continue
+    throw error
+  }
   const fingerprints = [0.2, 0.5, 0.8]
     .map((ratio) => source.slice(Math.floor(source.length * ratio), Math.floor(source.length * ratio) + 96))
     .filter((part) => part.length >= 64)
